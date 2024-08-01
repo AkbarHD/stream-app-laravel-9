@@ -38,14 +38,14 @@ class TransactionController extends Controller
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        // KARENA PD SAAT MENGAMBIL YG DARI ENV MAKA HASILNYA BOOL KITA GAMAU KAYA GITU, KITA MAU HASILNYA STRING JD "TRUE" 
+        // KARENA PD SAAT MENGAMBIL YG DARI ENV MAKA HASILNYA BOOL KITA GAMAU KAYA GITU, KITA MAU HASILNYA STRING JD "TRUE"
         \Midtrans\Config::$isProduction = (bool) env('MIDTRANS_IS_PRODUCTION');
         // Set sanitization on (default)
         \Midtrans\Config::$isSanitized = (bool) env('MIDTRANS_IS_SANITIZED');
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = (bool) env('MIDTRANS_IS_3DS');
 
-        // ini yg akan muncul di pembayaran midtrans 
+        // ini yg akan muncul di pembayaran midtrans
         $params = array(
             'transaction_details' => array(
                 'order_id' => $transaction->transaction_code,
